@@ -1,0 +1,45 @@
+## 基于request以及selenium(xpath)的知网爬虫 ##
+### 2021/4/8 ###
+
+* 该知网爬虫基于www.cnki.com.cn的知网空间，并非知网新版网站，知网新版反爬技术略高，水平有限，故选用知网空间进行爬取
+
+* 代码选择交互式输入，可选择爬取关键词以及页数
+
+* 由于我爬的数据量较大，故选用openyxl进行数据的写入与储存
+
+* 我爬取的信息有题目，作者，关键词，url链接和摘要
+
+* 在get_abstract函数里面，冗余语句略多
+
+* 获取摘要运用的是requests、BeautifulSoup的方法将html文本转换成了字符串，后利用正则表达进行检索的，此方法速度较快。而在其他关键信息的搜索中，利用的则是selenium加上xpath的方法，主要原因是因为这些信息在html里的区分度较低，正则表达不好写（水平不行），selenium获取较快一些
+
+  ## 一些需要改动的注意：
+
+  * 1
+
+    ```python
+    headers = {
+            'user-agent': 'xx',
+            'cookie': 'xx'
+        }
+    ```
+
+    在user-agent和cookie进行相应的修改，按照自己的浏览器配置
+
+  * 2
+
+    ```python
+    xfile = openpyxl.load_workbook('../test.xlsx')
+    ```
+
+    在此处更改保存的文件路径
+    
+    
+
+  
+
+  
+
+  
+
+  
