@@ -7,8 +7,6 @@ import time
 from selenium import webdriver
 
 cnt = 2
-
-
 def get_page(url):
     try:
         # 添加User-Agent，放在headers中，伪装成浏览器
